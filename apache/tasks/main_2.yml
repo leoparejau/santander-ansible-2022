@@ -1,0 +1,27 @@
+- name: Install web servers
+  hosts: webserver
+  remote_user: fedora
+  become: true
+
+  tasks:
+  - name: "Instalar Apache"
+    yum:
+      name:   
+        - httpd
+        - httpd-tools
+        - net-tools
+      state: present
+  - name: "test"
+    yum:
+      name: java
+      state: present
+
+  - name: "Enable HTTP"
+    service:
+      name: "httpd"
+      enabled: yes
+
+  - name: "Start Apache service"
+    service:
+      name: "httpd"
+      state: started

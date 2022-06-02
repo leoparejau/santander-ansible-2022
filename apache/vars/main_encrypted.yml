@@ -1,0 +1,6 @@
+---
+# vars file for apache
+
+http_dir: "santander_html"
+http_port: 8080
+source_code_location: "/home/fedora/apache/files/http_code/"
